@@ -4,7 +4,7 @@
 
 **Live project demo:** [f1strategydesk.mooo.com](https://f1strategydesk.mooo.com/)
 
-This independent project predicts the finishing order of a Grand Prix using information available before the race. The main research challenge is evaluation: a model can look impressive if it accidentally learns from later races or post-race fields. I built a walk-forward evaluation and compared the model with a strong, simple baseline: the starting grid.
+This is a personal, non-commercial learning project driven by an interest in motorsport. It predicts the finishing order of a Grand Prix using information available before the race. The main research challenge is evaluation: a model can look impressive if it accidentally learns from later races or post-race fields. I built a walk-forward evaluation and compared the model with a strong, simple baseline: the starting grid.
 
 > **Portfolio edition.** This repository presents the research question, methodology, aggregate findings, and a small standalone code example. The production system, provider data, telemetry, credentials, and detailed race-level records are held separately. The example does **not** reproduce the reported model results.
 
@@ -64,4 +64,4 @@ The full model and provider data are intentionally outside this public-facing ca
 
 ## Data and attribution
 
-The private system uses data accessed through [Jolpica-F1](https://github.com/jolpica/jolpica-f1), [FastF1](https://docs.fastf1.dev/), [OpenF1](https://openf1.org/), and [Open-Meteo](https://open-meteo.com/). This repository republishes none of their raw feeds or telemetry. Their respective terms govern the source data. This is an independent academic portfolio project and is not official, affiliated with, approved by, or endorsed by the Formula 1 companies or the data providers. F1, FORMULA 1, GRAND PRIX, and related marks belong to their respective owners.
+The private system uses software and data services from [Jolpica-F1](https://github.com/jolpica/jolpica-f1), [FastF1](https://docs.fastf1.dev/), [OpenF1](https://openf1.org/), and [Open-Meteo](https://open-meteo.com/). Open-source software licenses do not automatically grant rights to republish upstream race data. This repository republishes none of their raw feeds or telemetry; each provider's terms still apply. This independent project is not official, affiliated with, approved by, or endorsed by the Formula 1 companies or the data providers. F1, FORMULA 1, GRAND PRIX, and related marks belong to their respective owners.
