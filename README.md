@@ -2,7 +2,7 @@
 
 **A machine learning case study in time-aware evaluation**
 
-**Live project demo:** [f1strategydesk.mooo.com](https://f1strategydesk.mooo.com/)
+**Live project demo:** [Speed Strategy Desk](https://speedstrategydesk.mooo.com/)
 
 This is a personal, non-commercial learning project driven by an interest in motorsport. It predicts the finishing order of a Grand Prix using information available before the race. The main research challenge is evaluation: a model can look impressive if it accidentally learns from later races or post-race fields. I built a walk-forward evaluation and compared the model with a strong, simple baseline: the starting grid.
 
