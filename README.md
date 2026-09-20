@@ -1,6 +1,8 @@
-# Predicting Grand Prix Finishing Order
+# Motorsport Finishing-Order Prediction
 
 **A machine learning case study in time-aware evaluation**
+
+**Live project demo:** [f1strategydesk.mooo.com](https://f1strategydesk.mooo.com/)
 
 This independent project predicts the finishing order of a Grand Prix using information available before the race. The main research challenge is evaluation: a model can look impressive if it accidentally learns from later races or post-race fields. I built a walk-forward evaluation and compared the model with a strong, simple baseline: the starting grid.
 
@@ -62,4 +64,4 @@ The full model and provider data are intentionally outside this public-facing ca
 
 ## Data and attribution
 
-The private system uses data accessed through [Jolpica-F1](https://github.com/jolpica/jolpica-f1), [FastF1](https://docs.fastf1.dev/), [OpenF1](https://openf1.org/), and [Open-Meteo](https://open-meteo.com/). This repository republishes none of their raw feeds or telemetry. Their respective terms govern the source data. This is an independent academic portfolio project and is not affiliated with or endorsed by Formula 1 or the data providers.
+The private system uses data accessed through [Jolpica-F1](https://github.com/jolpica/jolpica-f1), [FastF1](https://docs.fastf1.dev/), [OpenF1](https://openf1.org/), and [Open-Meteo](https://open-meteo.com/). This repository republishes none of their raw feeds or telemetry. Their respective terms govern the source data. This is an independent academic portfolio project and is not official, affiliated with, approved by, or endorsed by the Formula 1 companies or the data providers. F1, FORMULA 1, GRAND PRIX, and related marks belong to their respective owners.
