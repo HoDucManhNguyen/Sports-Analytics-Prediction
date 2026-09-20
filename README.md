@@ -6,6 +6,8 @@
 
 This is a personal, non-commercial learning project driven by an interest in motorsport. It predicts the finishing order of a Grand Prix using information available before the race. The main research challenge is evaluation: a model can look impressive if it accidentally learns from later races or post-race fields. I built a walk-forward evaluation and compared the model with a strong, simple baseline: the starting grid.
 
+**My contribution:** I designed and implemented the data pipeline, ranking approach, chronological evaluation, leakage checks, and web demonstration as an independent project. The providers credited below supply source data and software; they do not sponsor or endorse the work.
+
 > **Portfolio edition.** This repository presents the research question, methodology, aggregate findings, and a small standalone code example. The production system, provider data, telemetry, credentials, and detailed race-level records are held separately. The example does **not** reproduce the reported model results.
 
 ## Research question
@@ -16,7 +18,7 @@ The complete project combines historical results, qualifying/grid data, recent f
 
 ## Evaluation design
 
-For each target race, the model is trained on races that finished **strictly earlier**. After a race is scored, that race can enter the training set for the next prediction. Model settings were selected with the 2024 and 2025 seasons; 2026 was held out for evaluation. The comparison baseline predicts that each driver finishes in starting-grid order.
+For each target race, the model is trained on races that finished **strictly earlier**. After a race is scored, that race can enter the training set for the next prediction. Numerical model settings were selected using the 2024 and 2025 seasons; 2026 is a later evaluation period. Results from 2026 were observed during iterative development, so its final score is **exploratory rather than a fully untouched confirmatory test**. The comparison baseline predicts that each driver finishes in starting-grid order.
 
 ```mermaid
 flowchart LR
@@ -39,11 +41,11 @@ Spearman's ρ measures agreement between the predicted and actual finishing orde
 |:--|:--|--:|--:|--:|--:|
 | 2024 | Model selection | 24 | 0.825 | 0.776 | +0.049 |
 | 2025 | Model selection | 24 | 0.764 | 0.736 | +0.029 |
-| **2026** | **Held out** | **13** | **0.827** | **0.790** | **+0.037** |
+| **2026** | **Later evaluation; monitored** | **13** | **0.827** | **0.790** | **+0.037** |
 
-For the 13 held-out races, the recorded model selected the winner in 10 races; the grid baseline did so in 9. It identified an average of 7.69 of the actual top 10 drivers per race, compared with 7.38 for the grid baseline. These figures come from the private evaluation artifacts; this portfolio repository does not contain the underlying race-by-race predictions or third-party datasets.
+For the 13 evaluated 2026 races, the recorded model selected the winner in 10 races; the grid baseline did so in 9. It identified an average of 7.69 of the actual top 10 drivers per race, compared with 7.38 for the grid baseline. These figures come from the private evaluation artifacts; this portfolio repository does not contain the underlying race-by-race predictions or third-party datasets.
 
-**Interpretation:** the held-out result is encouraging but limited. Thirteen races are a small sample, and 2024–2025 were used for model selection, so their scores are optimistic estimates of generalization. I do not claim a statistically established advantage or a betting application.
+**Interpretation:** the later-period result is encouraging but limited. Thirteen races are a small sample, 2024–2025 were used for model selection, and 2026 was monitored during development. These numbers do not establish a general advantage or support a betting application. A future season evaluated after freezing the complete design would provide stronger evidence.
 
 ## What I learned
 
@@ -61,6 +63,10 @@ python3 -m unittest discover -s examples -v
 ```
 
 The full model and provider data are intentionally outside this public-facing case study. The project can be discussed in more detail in an academic review setting.
+
+### What can be checked here
+
+The included tests check the temporal cutoff and rank-scoring example on invented rows. The summary chart and table can be compared with each other, but the underlying model results **cannot be independently recomputed** from this repository. This is a transparent research case study, not a reproducibility package for the production model.
 
 ## Data and attribution
 
