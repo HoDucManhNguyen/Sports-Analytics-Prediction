@@ -248,11 +248,11 @@ These screenshots were captured on **20 September 2026**. They document the inte
 </details>
 
 <details>
-<summary>20. One stored prediction — result comparison and provenance warning</summary>
+<summary>20. Stored prediction example — Dutch Grand Prix result comparison</summary>
 
-![Stored prediction table with incomplete-record warning and generation timestamp](assets/screenshots/20-prediction-detail.png)
+![Dutch Grand Prix stored prediction compared with the official finishing order](assets/screenshots/20-prediction-detail.png)
 
-**What it shows:** “Pred.” is the model rank, “Official” is the observed finish, and Δ is model rank minus official position; positive values mean the model placed the driver too low. DNF probability is an estimated retirement risk; dashes in probability and interval columns mean no value was available. Crucially, this capture says **generated 10 August for a 14 June race** and shows only **20 of 22** expected entries. It is a retrospective, incomplete historical record, **not proof of a pre-race forecast**. The older page wording visible in this screenshot incorrectly called every saved record pre-race; that wording has since been corrected on the live site.
+**What it shows:** “Pred.” is the saved model rank, “Grid” is the starting position, and “Official” is the observed finishing position. Δ equals model rank minus official position: zero is exact, a positive value means the model placed the driver too low, and a negative value means it placed the driver too high. In the visible rows, the first four predicted positions match the official top four exactly; later differences show where the ranking missed, including the large change associated with Max Verstappen's P22 classification. The red left border marks the predicted top ten. DNF probability is the model's estimated retirement risk, while dashes under Top-10 probability and the 80% range mean those values were not stored for this record. The output was generated on the same calendar date as the race; its timestamp is shown for provenance, but the date alone does not prove that it was locked before the start. The screenshot is cropped after the first part of the field.
 
 </details>
 
